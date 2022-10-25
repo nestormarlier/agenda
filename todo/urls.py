@@ -1,7 +1,6 @@
 from unicodedata import name
 from django.urls import path
 
-from contacto.views import delete, edit
 from . import views
 
 urlpatterns = [

@@ -1,7 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 
-import todo
 from .models import Todo
 from .forms import TodoForm
 
