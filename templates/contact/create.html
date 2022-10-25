@@ -1,0 +1,18 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Crear contacto {{ contact.name}} {{ contact.last_name }} {% endblock %}
+{% load static %}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'css/forms.css' %}">{% endblock %}
+{% block content %}
+<span class="btn-auxs">
+    <a href="{% url 'contact' %}" class="btn btn-ver">Volver atrás</a>
+</span>
+<form action="" method="post">
+    {% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+    <input type="submit" value="Enviar" class="btn-send" >
+</form>
+{% endblock %}

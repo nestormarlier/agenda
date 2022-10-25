@@ -1,0 +1,11 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+    <h3>Agenda</h3>
+    <hr>
+    <form action="{% url 'agenda' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Crear">
+    </form>
+{% endblock %}

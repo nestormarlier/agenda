@@ -1,0 +1,34 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Tareas {% endblock %}
+{% block content %}
+<form class="search" action="{% url 'todo' %}" method="get">
+    <input type="text" name="search" class="search-bar" placeholder="Buscar contacto...">
+    <input type="submit" class="btn btn-buscar" value="Buscar">
+</form>
+<span>
+    <a href="{% url 'todo' %}" class="btn btn-ver">Ver todos</a>
+    <a href="{% url 'todo_create' %}" class="btn btn-crear">Crear</a>
+</span>
+{% for tarea in tareas %}
+
+    <ul class="list">
+            <li>
+                <b>Tarea</b>{{ tarea.title }}
+            </li>   
+            <li>
+                <b>Descripción</b>{{ tarea.description }}
+            </li>
+            <li>
+                <b>
+                </b> 
+                <span>                   
+                    <a href="{% url 'todo_view' id=tarea.id %}" class="btn btn-detail">Ver</a>
+                    <a href="{% url 'todo_edit' id=tarea.id %}" class="btn btn-edit">Editar</a>
+                    <a href="{% url 'todo_delete' id=tarea.id %}" class="btn btn-delete">Borrar</a>    
+                </span>
+            </li>
+    </ul>
+
+{% endfor %}
+{% endblock %}

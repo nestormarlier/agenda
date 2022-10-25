@@ -1,0 +1,16 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Detalle contacto {{ contact.name}} {{ contact.last_name }} {% endblock %}
+
+{% block content %}
+<span class="btn-auxs">
+    <a href="{% url 'todo' %}" class="btn btn-ver">Volver atrás</a>
+</span>
+<ul class="list">
+        <li><b>Título: </b>{{ tarea.title }}</li>
+        <li><b>Descripción: </b>{{ tarea.description }}</li>
+        <li><b>Fecha creación: </b>{{ tarea.date }}</li>
+        <li><b>Fecha fin estimada: </b>{{ tarea.estimated_end }}</li>
+        <li><b>Prioridad: </b>{{ tarea.priority }}</li>
+</ul>
+{% endblock %}

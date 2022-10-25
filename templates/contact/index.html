@@ -1,0 +1,30 @@
+{% extends 'layout/base.html' %}
+
+{% block title %}
+    Contactos
+{% endblock %}
+    
+{% block content %}
+    <form class="search" action="{% url 'contact' %}" method="get">
+        <input type="text" name="search" class="search-bar" placeholder="Buscar contacto...">
+        <input type="submit" class="btn btn-buscar" value="Buscar">
+    </form>
+    <span class="btn-auxs">
+        <a href="{% url 'contact' %}" class="btn btn-ver"> Ver todos</a>
+        <a href="{% url 'contact_create' %}" class="btn btn-crear">Crear</a>
+    </span>
+    <ul class="list">
+        {% for contact in contactos %}
+            <li>
+                {{ contact.name }}
+                {{ contact.last_name }}
+                <span>
+                    <a href="{% url 'contact_view' id=contact.id %}" class="btn btn-detail">Ver</a>
+                    <a href="{% url 'contact_edit' id=contact.id %}" class="btn btn-edit">Editar</a>
+                    <a href="{% url 'contact_delete' id=contact.id %}" class="btn btn-delete">Borrar</a>
+                </span>
+            </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
