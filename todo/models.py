@@ -1,6 +1,3 @@
-from email.policy import default
-from tabnanny import verbose
-from turtle import title
 from django.db import models
 from datetime import date
 
